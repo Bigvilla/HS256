@@ -1,4 +1,4 @@
-package main
+package HS256
 
 import (
 	"crypto/hmac"
@@ -22,9 +22,8 @@ type PayLoad struct {
 	Iss string `json:"iss"`
 }
 
-func main() {
-	key := "keytest"
-	secret := "123456"
+//Token 输出生成的Token
+func Token(key, secret string) {
 	token := GetToken(key, secret)
 	fmt.Println(token)
 }
